@@ -1,25 +1,19 @@
 package com.bodekjan.soundmeter;
 
 import android.app.Activity;
+import android.app.Notification;
+import android.app.NotificationManager;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.SharedPreferences;
-import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Handler;
 import android.os.Message;
 import android.os.Bundle;
-import android.text.Spannable;
-import android.text.SpannableString;
-import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.view.animation.TranslateAnimation;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -79,6 +73,24 @@ public class MainActivity extends Activity {
                 maxVal.setText(df1.format(World.maxDB));
                 curVal.setText(df1.format(World.dbCount));
                 updateData(World.dbCount,0);
+
+                if(World.dbCount > 50){
+
+                    NotificationManager notificationManager =
+                            (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+                    int notifyId = 1;
+                    String channelId = "some_channel_id";
+
+
+                    Notification notification = new Notification.Builder(MainActivity.this)
+                            .setContentTitle("Audio Buddy Noise Alert!")
+                            .setContentText("Noise Levels are high, be careful!")
+                            .setSmallIcon(R.drawable.logotransp)
+                            .build();
+
+                    notificationManager.notify(notifyId, notification);
+                }
+
                 if(refresh==1){
                     long now=new Date().getTime();
                     now=now-currentTime;
