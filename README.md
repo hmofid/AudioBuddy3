@@ -1,7 +1,4 @@
-# Sound-Meter
-Sound-meter is an android application that measures sound level in decibel<br/>
+# Audio-Buddy
+Audio-Buddy is a noise detection app that detects ambient noise in real time in real time and alerts the user of extreme noise levels. This app is designed to benefit children with autism with noise senstivity. <br/>
 
-![image](https://github.com/jeff2900/Sound-Meter/blob/master/screenshots/sm_en.jpg)<br>
-<br/>
-Based on halibobo's project
-https://github.com/halibobo/SoundMeter<br/>
+
