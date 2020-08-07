@@ -12,14 +12,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1">
+
         <com.bodekjan.soundmeter.Speedometer
             android:id="@+id/speed"
-            android:layout_centerInParent="true"
             android:layout_width="280dp"
             android:layout_height="280dp"
-            android:background="@drawable/noise_disc"
+            android:layout_centerInParent="true"
             android:layout_gravity="center"
-            android:layout_marginTop="16dp" />
+            android:layout_marginTop="16dp"
+            android:background="@drawable/noise_disc_ab_trasp" />
 
         <ImageButton
             android:layout_width="48dp"
